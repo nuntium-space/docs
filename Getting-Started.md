@@ -83,6 +83,21 @@ curl -X PUT "http://localhost:4571/publishers"
 
 to create the `articles` and `publishers` indeces.
 
+## GitHub Actions
+
+#### Install [act][act]
+
+See [here](https://github.com/nektos/act#installation).
+
+#### Test
+
+Run
+
+```
+act
+```
+
+[act]: https://github.com/nektos/act
 [localstack]: https://github.com/localstack/localstack
 [s3]: https://aws.amazon.com/s3
 [terraform]: https://www.terraform.io
