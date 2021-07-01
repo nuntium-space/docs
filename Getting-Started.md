@@ -99,5 +99,4 @@ act
 
 [act]: https://github.com/nektos/act
 [localstack]: https://github.com/localstack/localstack
-[s3]: https://aws.amazon.com/s3
 [terraform]: https://www.terraform.io
