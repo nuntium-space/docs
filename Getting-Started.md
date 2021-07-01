@@ -1,12 +1,16 @@
 # Getting Started
 
-## Install [localstack][localstack]
+## Requirements
 
-### Install Docker
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Stripe CLI](https://stripe.com/docs/stripe-cli)
+- [PostgreSQL](https://www.postgresql.org/download)
+- [Terraform](https://www.terraform.io/downloads.html)
+- [act](https://github.com/nektos/act#installation)
 
-See [here](https://www.docker.com/products/docker-desktop).
+## First steps
 
-### Build image and start
+### Build [LocalStack][localstack] image and start
 
 Run
 
@@ -14,49 +18,13 @@ Run
 docker-compose up --build
 ```
 
-## `Stripe`
-
-### Install CLI
-
-See [here](https://stripe.com/docs/stripe-cli).
-
-### Listen for events
-
-Run
-
-```
-stripe listen -f localhost:4000/webhooks/stripe
-```
-
-### Resend event
-
-Run
-
-```
-stripe events resend EVENT_ID
-```
-
-where `EVENT_ID` is the id of the event to resend.
-
-## Create database
-
-### Install PostgreSQL
-
-See [here](https://www.postgresql.org/download/).
-
 ### Create tables, views, etc.
 
 Run [`schema.sql`](schema.sql).
 
-## [Terraform][terraform]
+### Initialize Terraform
 
-### Install
-
-See [here](https://www.terraform.io/downloads.html).
-
-***Note:** you must run the following commands inside the [terraform/local](terraform/local) folder.*
-
-### Initialize
+***Note:** you must run the following command inside the [terraform/local](terraform/local) folder.*
 
 Run
 
@@ -64,15 +32,7 @@ Run
 terraform init
 ```
 
-### Apply
-
-Run
-
-```
-terraform apply
-```
-
-## Elasticsearch
+### Create Elasticsearch indeces
 
 Run
 
@@ -83,11 +43,49 @@ curl -X PUT "http://localhost:4571/publishers"
 
 to create the `articles` and `publishers` indeces.
 
-## GitHub Actions
+## Basics
 
-#### Install [act][act]
+### Stripe
 
-See [here](https://github.com/nektos/act#installation).
+#### Listen for events
+
+Run
+
+```
+stripe listen -f localhost:4000/webhooks/stripe
+```
+
+#### Resend event
+
+Run
+
+```
+stripe events resend EVENT_ID
+```
+
+where `EVENT_ID` is the id of the event to resend.
+
+### Terraform
+
+***Note:** you must run the following commands inside the [terraform/local](terraform/local) folder.*
+
+#### See what changes will be applied
+
+Run
+
+```
+terraform plan
+```
+
+#### Apply changes
+
+Run
+
+```
+terraform apply
+```
+
+### GitHub Actions
 
 #### Test
 
