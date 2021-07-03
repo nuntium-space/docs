@@ -1,7 +1,6 @@
 # API Response
 
-These should be the default response codes for successful requests.\
-Currently the API does not follow these rules but in the coming months a complete transition will happen.
+These should be the default response codes for successful requests.
 
 - `GET`: `200 OK` -> { *obj* }
 - `POST`: `201 Created` -> { id: *resource_id* }
