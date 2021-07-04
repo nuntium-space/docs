@@ -6,3 +6,4 @@ This repo contains documentation that is not specific to any other repo or that 
 
 - [Getting Started](Getting-Started.md)
 - [API Response](API-Response.md)
+- [Account Linking](Account-Linking.md)
