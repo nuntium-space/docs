@@ -2,11 +2,21 @@
 
 These should be the default response codes for successful requests.
 
-- `GET`: `200 OK` -> { *obj* }
+- `GET`:
+  - Status Code: `200 OK`
+  - Response Body: *object* or *array of objects*
 - `POST`: `201 Created` -> { id: *resource_id* }
-- `PATCH`: `200 OK` -> { *obj* }
-- `PUT`: `204 No Content` -> *void*
-- `DELETE`: `204 No Content` -> *void*
+  - Status Code: `201 Created`
+  - Response Body: *object with only the ID of the new resource*
+- `PATCH`:
+  - Status Code: `204 No Content`
+  - Response Body: *void*
+- `PUT`:
+  - Status Code: `204 No Content`
+  - Response Body: *void*
+- `DELETE`:
+  - Status Code: `204 No Content`
+  - Response Body: *void*
 
 ## Errors
 
